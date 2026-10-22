@@ -1,0 +1,31 @@
+{
+  "purpose": "signed DuckLake 1.1 override spike; not a branching implementation or production release",
+  "upstream_ducklake": "417a9117f590e8141742ac0579d02f6a90162e37",
+  "catalog_format": "1.1",
+  "marker": "SELECT ducklake_spike_build() -> gd-spike-1.1",
+  "signature": "RSA-2048 PKCS#1 v1.5 SHA-256 over DuckDB 1MiB composite hash",
+  "key_fingerprint": "sha256:48353c4335d7f8d7f048bfbe63460e51f4df87c8e557d2039d4ade6afce3d7bf",
+  "toolchain": "GCC 14, manylinux_2_28_aarch64, CRoaring v4.3.11, Release -O1, EXTENSION_STATIC_BUILD=ON",
+  "artifacts": [
+    {
+      "duckdb_version": "v2.0.0-alpha46057",
+      "duckdb_source": "b15358c371daf10dad799a43b6167f6ccdce84d8",
+      "platform": "linux_arm64",
+      "ducklake_source": "d0c238439b659988d523abe63167324fe4ae5110",
+      "source_url": "https://github.com/gizmodata/ducklake/tree/d0c238439b659988d523abe63167324fe4ae5110",
+      "path": "v2.0.0-alpha46057/linux_arm64/ducklake.duckdb_extension.gz",
+      "sha256_gzip": "dc25d4a4027875895bd99f885746ff4276c1ee768eb8381f4a364baa09978310",
+      "sha256_uncompressed": "bb4de2949ce5366cf52ffb55be4e7accde9fdff1daeeb31543d84f78ec3b5651"
+    },
+    {
+      "duckdb_version": "v2.0.0",
+      "duckdb_source": "d54cbbe3df1",
+      "platform": "linux_arm64",
+      "ducklake_source": "3dd0716e1030c198edfe2ade09ab67cc9d6180cb",
+      "source_url": "https://github.com/gizmodata/ducklake/tree/3dd0716e1030c198edfe2ade09ab67cc9d6180cb",
+      "path": "v2.0.0/linux_arm64/ducklake.duckdb_extension.gz",
+      "sha256_gzip": "b356084dbc810c136df2617ea560f07fb87deaa0dbde4b74ed3a029c6320edca",
+      "sha256_uncompressed": "b9d21f12e2dc5bbad5a3e60e164110aec3debfe323bc3dfdb6218674e030c45d"
+    }
+  ]
+}
