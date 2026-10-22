@@ -31,6 +31,9 @@ Only **linux_arm64** is included. Pin the artifact commit SHA in the URL, rather
 Use the base64 body from `public_key.pem` as the SQL public key:
 
 ```sql
+-- Fresh Edge images need httpfs for an HTTPS repository.
+INSTALL httpfs;
+LOAD httpfs;
 SET autoinstall_known_extensions = false;
 SET allow_extension_repositories = 'allowed';
 CREATE EXTENSION REPOSITORY IF NOT EXISTS agc
