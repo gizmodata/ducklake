@@ -18,6 +18,12 @@ namespace duckdb {
 ScalarFunction DuckLakeMurmur3Function();
 
 static void LoadInternal(ExtensionLoader &loader) {
+	// Test-only marker: distinguish this signed spike from stock/core and built-in DuckLake.
+	loader.RegisterFunction(ScalarFunction("ducklake_spike_build", {}, LogicalType::VARCHAR,
+	    [](DataChunk &, ExpressionState &, Vector &result) {
+	        result.SetVectorType(VectorType::CONSTANT_VECTOR);
+	        result.SetValue(0, Value("gd-spike-1.1"));
+	    }));
 	loader.SetDescription("Adds support for DuckLake, SQL as a Lakehouse Format");
 
 	auto &instance = loader.GetDatabaseInstance();

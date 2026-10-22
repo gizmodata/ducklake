@@ -90,7 +90,7 @@ static void NormalizeListChildNames(vector<MultiFileColumnDefinition> &columns, 
 
 //! Reads the boundary of a Top-N dynamic filter, which is not set before the first rows arrive
 static bool TryGetTopNBoundary(DynamicFilterData &filter_data, ExpressionType &comparison_type, Value &constant) {
-	annotated_shared_lock<annotated_shared_mutex> l(filter_data.lock);
+	lock_guard<mutex> l(filter_data.lock);
 	if (!filter_data.initialized) {
 		return false;
 	}
